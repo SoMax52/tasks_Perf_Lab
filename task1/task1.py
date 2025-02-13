@@ -1,7 +1,9 @@
+import sys
+
 def array():
     # Ввод числа массива и её длины
-    n = int(input("Введите число массива: "))
-    m = int(input("Введите длину массива: "))
+    n = int(sys.argv[1])
+    m = int(sys.argv[2])
     l = list(range(1, n + 1))
     i = 0
     print("Результат: ", end="")
