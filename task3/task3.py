@@ -57,7 +57,7 @@ def rd_js(fl_rpt):
 if __name__ == '__main__':
     # Указываем файл tests.json
     tests = sys.argv[1]
-    # Указываем файл tests.json
+    # Указываем файл values.json
     values = sys.argv[2]
     parse = ReportJS(tests,values)
     parse.main_psr()
