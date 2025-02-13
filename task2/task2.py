@@ -1,25 +1,25 @@
+import sys
 import math
 
 def circle():
     # Ввод кординат центра окружности и её радиуса из файла circle.txt
-    with open("circle.txt") as f:
+    circle_file = sys.argv[1]
+    with open(circle_file) as f:
         circ_x, circ_y = f.readline().split()
+        circ_x, circ_y = float(circ_x), float(circ_y)
         rad = int(f.readline(2))
-    circle_center_x = float(circ_x)
-    circle_center_y = float(circ_y)
-    radius = rad
     # Ввод координат точек X и Y из файла dot.txt
-    with open("dot.txt") as f:
+    dot_file = sys.argv[2]
+    with open(dot_file) as f:
         points = f.readlines()
     for p in points:
-        X = float(p.split()[0])
-        Y = float(p.split()[1])
+        X, Y = float(p.split()[0]), float(p.split()[1])
         # Вычисление расстояние между центром окружности и точкой
-        distance = math.sqrt((circle_center_x - X) ** 2 + (circle_center_y - Y) ** 2)
-        if distance < radius:
+        dist = math.sqrt((circ_x - X) ** 2 + (circ_y - Y) ** 2)
+        if dist < rad:
         # Точка внутри окружности
             print(1)
-        elif distance == radius:
+        elif dist == rad:
         # Точка лежит на окружности
             print(0)
         else:
