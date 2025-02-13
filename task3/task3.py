@@ -1,6 +1,7 @@
 # Импорт библиотек для корректной работы с файлами json
 import json
 import os
+import sys
 
 # Создание класса по парсированию json
 class ReportJS:
@@ -54,8 +55,10 @@ def rd_js(fl_rpt):
     return fl_rpt
 # Запуск программы
 if __name__ == '__main__':
-    tests = input('Укажите расположение файла tests.json: ')
-    values = input('Укажите расположение файла values.json: ')
+    #Укажите расположение файла tests.json
+    tests = sys.argv[1]
+    #Укажите расположение файла values.json
+    values = sys.argv[2]
     parse = ReportJS(tests,values)
     parse.main_psr()
     print('Файл report.json создан!')
