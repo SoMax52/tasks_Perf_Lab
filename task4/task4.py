@@ -1,6 +1,9 @@
+import sys
+
 def step():
     # Ввод данных из файла numbers.txt
-    with open("numbers.txt") as f:
+    p_nums = sys.argv[1]
+    with open(p_nums) as f:
         nums = f.readlines()
         numbers = [int(i) for i in nums]
     numbers.sort()
