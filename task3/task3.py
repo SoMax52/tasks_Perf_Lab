@@ -55,9 +55,9 @@ def rd_js(fl_rpt):
     return fl_rpt
 # Запуск программы
 if __name__ == '__main__':
-    #Укажите расположение файла tests.json
+    # Указываем файл tests.json
     tests = sys.argv[1]
-    #Укажите расположение файла values.json
+    # Указываем файл tests.json
     values = sys.argv[2]
     parse = ReportJS(tests,values)
     parse.main_psr()
